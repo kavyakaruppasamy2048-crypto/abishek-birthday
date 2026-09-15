@@ -569,41 +569,82 @@ useEffect(() => {
 {/* BIRTHDAY COUNTDOWN */}
 <section className="countdown-section" id="countdown">
 
-  <p className="small-text">Counting down to your day</p>
+  {timeLeft.days === 0 &&
+  timeLeft.hours === 0 &&
+  timeLeft.minutes === 0 &&
+  timeLeft.seconds === 0 ? (
+    <>
+      <p className="small-text">Today is your day 🤎</p>
 
-  <h2 className="section-title">
-    Until your
-    <br />
-    <span>birthday.</span>
-  </h2>
+      <h2 className="section-title">
+        Happy Birthday,
+        <br />
+        <span>Abishek. 🤎</span>
+      </h2>
 
-  <div className="countdown-grid">
+      <p className="countdown-date">
+        October 10, 2026 ✨
+      </p>
+    </>
+  ) : (
+    <>
+      <p className="small-text">Counting down to your day</p>
 
-    <div className="countdown-box">
-      <strong>{timeLeft.days}</strong>
-      <span>Days</span>
-    </div>
+      <h2 className="section-title">
+        Until your
+        <br />
+        <span>birthday.</span>
+      </h2>
 
-    <div className="countdown-box">
-      <strong>{timeLeft.hours}</strong>
-      <span>Hours</span>
-    </div>
+      <div className="countdown-grid">
 
-    <div className="countdown-box">
-      <strong>{timeLeft.minutes}</strong>
-      <span>Minutes</span>
-    </div>
+        <div className="countdown-box">
+          <strong>{timeLeft.days}</strong>
+          <span>Days</span>
+        </div>
 
-    <div className="countdown-box">
-      <strong>{timeLeft.seconds}</strong>
-      <span>Seconds</span>
-    </div>
+        <div className="countdown-box">
+          <strong>{timeLeft.hours}</strong>
+          <span>Hours</span>
+        </div>
 
+        <div className="countdown-box">
+          <strong>{timeLeft.minutes}</strong>
+          <span>Minutes</span>
+        </div>
+
+        <div className="countdown-box">
+          <strong>{timeLeft.seconds}</strong>
+          <span>Seconds</span>
+        </div>
+
+      </div>
+
+      <p className="countdown-date">
+        October 10, 2026 🤎
+      </p>
+      {timeLeft.days === 0 &&
+timeLeft.hours === 0 &&
+timeLeft.minutes === 0 &&
+timeLeft.seconds === 0 && (
+  <div className="birthday-reveal">
+    <p className="small-text">Today is your day 🤎</p>
+
+    <h3>
+      Happy Birthday,
+      <br />
+      <span>Abishek ✨</span>
+    </h3>
+
+    <p>
+      The countdown may be over,
+      <br />
+      but the celebration is just beginning. 🤎
+    </p>
   </div>
-
-  <p className="countdown-date">
-    October 10, 2026 🤎
-  </p>
+)}
+    </>
+  )}
 
 </section>
          {/* FINAL SURPRISE */}
